@@ -125,6 +125,15 @@ def _score_song(user_prefs: Dict, song: Dict) -> Tuple[float, str]:
     return round(score, 2), explanation
 
 
+def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
+    """
+    Scores a single song against user preferences.
+    Required by recommend_songs() and src/main.py
+    """
+    # TODO: Implement scoring logic using your Algorithm Recipe from Phase 2.
+    # Expected return format: (score, reasons)
+    return []
+
 def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tuple[Dict, float, str]]:
     """Score all songs, sort by score descending, and return the top-k as (song, score, explanation) tuples."""
     scored = [(_score_song(user_prefs, song), song) for song in songs]
